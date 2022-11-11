@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <script>
+         function updateGrandTotal()
+        {
+            const grandTotal = document.getElementById("grandTotal").value;
+            grandTotal.value = parseInt(document.getElementById("item1_total").value) + 
+            parseInt(document.getElementById("item2_total").value) + 
+            parseInt(document.getElementById("item3_total").value) + 
+            parseInt(document.getElementById("item4_total").value) + 
+            parseInt(document.getElementById("item5_total").value);
+            alert(grandTotal.value) ;
+        }
+        function addToCart(unitCost,quantity,total) 
+        {
+            total.value = (unitCost.value * quantity.value);
+            quantity.value=0; 
+            // updateGrandTotal();
+        }
+
+    </script>
+</head>
+<body>
+
+    <div style="width:100%">
+        <iframe src="G8Breadmenu.html" title="Navigation" style="width:100%; height: 70px;"></iframe>
+    </div>
+   
+    <h1 style="text-align:center">Order Some Fantastic Fresh Bread!</h1><br><br><br>
+
+    <div>
+
+    <table>
+        
+        <tr>
+            <th width="10%"></th>
+            <th width="20%">Item</th>
+            <th width="10%">Price</th>
+            <th width="15%">Quantity</th>
+            <th width="45%">Amount</th>
+            </th>
+        </tr>
+        <tr>
+            <td><img src="https://img.freepik.com/free-photo/croissants-wooden-cutting-board_1150-28480.jpg?w=2000" height="100" width="100"></td>
+            <td> <b>Fresh Butter Croissant</b>
+            <p>Flaky,Buttery, Crispy Croissant</p></td>
+            <td style="text-align:center">Rs.500
+                <input type="hidden" id="item1_unitcost" value="500">
+            </td>
+            <td style="text-align: center">
+                <input type="text" id="item1_qty" style="width:20px" />
+                <button onclick="addToCart(item1_unitcost,item1_qty,item1_total)">Update Cart</button></td>
+            <td style="text-align:center"><input type="text" id="item1_total" readonly  value="0"></td>
+        </tr>
+
+        <tr>
+            
+            <td><img src="https://handletheheat.com/wp-content/uploads/2014/06/Homemade-Hawaiian-Bread-Rolls-Square.jpg" width="100" height="100"></td>
+            <td><b>Bouncy Brioche Buns</b>
+            <p>Soft and Bouncy, Brioche </p></td>
+            <td style="text-align:center">Rs.450
+                <input type="hidden" id="item2_unitcost" value="450">
+            </td>
+
+            <td style="text-align: center">
+                <input type="text" id="item2_qty" style="width:20px" />
+                <button  onclick="addToCart(item2_unitcost,item2_qty,item2_total)">Update Cart</button></td>
+            <td style="text-align:center"><input type="text" id="item2_total"  readonly  value="0"></td>
+
+        </tr>
+
+        <tr>
+           
+            <td><img src="https://images-gmi-pmc.edge-generalmills.com/b40d5e11-24f1-4865-83ac-4a554e8ea8a8.jpg" width="100" height="100"></td>
+            <td> <b>Pumpkin Loaf</b>
+            <p>Flavourful Bread, with muligrain seeds</p></td>
+            <td style="text-align:center">Rs.400
+                <input type="hidden" id="item3_unitcost" value="400">
+            </td>
+            <td style="text-align: center">
+                <input type="text" id="item3_qty" style="width:20px" />
+                <button onclick="addToCart(item3_unitcost,item3_qty,item3_total)">Update Cart</button></td>
+            <td style="text-align:center"><input type="text"  id="item3_total"  readonly  value="0"></td>
+            
+        </tr>
+
+        <tr>
+            
+            <td><img src="https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HHFMCVXP4MI6XANSTNYGDJMC3A.jpg" height="100" width="100"></td>
+            <td><b>Pepporoni and Cheese Stuffed Bread</b>
+            <p>Ooey Gooey cheese, with smoked ham</p></td>
+            <td style="text-align:center">Rs.500
+                <input type="hidden" id="item4_unitcost" value="500"></td>
+            <td style="text-align: center">
+                <input type="text" id="item4_qty" style="width:20px" />
+                <button onclick="addToCart(item4_unitcost,item4_qty,item4_total)">Update Cart</button></td>
+            <td style="text-align:center"><input type="text"  id="item4_total"  readonly  value="0"></td>
+            
+        </tr>
+       
+        <tr>
+            
+            <td><img src="https://sallysbakingaddiction.com/wp-content/uploads/2020/06/breakfast-pastries-2.jpg" width="100" height="100"></td>
+            <td><b>Assorted Danish Collection</b>
+            <p>Sweet and Fruity, Flaky Danish</p></td>
+            <td style="text-align:center">Rs.450
+                <input type="hidden" id="item5_unitcost" value="450"></td>
+            <td style="text-align: center">
+                <input type="text" id="item5_qty" style="width:20px" />
+                <button onclick="addToCart(item5_unitcost,item5_qty,item5_total)">Update Cart</button></td>
+            <td style="text-align:center"><input type="text"  id="item5_total"  readonly  value="0"></td>
+            
+        </tr>
+        <tr>
+            
+            <td></td>
+            <td></td>
+            <td style="text-align:center"></td>
+            <td style="text-align: center">
+                Grand Total
+            </td>
+            <td style="text-align:center"><input type="text" id="grandTotal" readonly value="0"></td>
+            
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
+
+
+
+
